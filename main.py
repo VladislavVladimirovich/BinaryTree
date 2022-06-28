@@ -6,8 +6,7 @@ class BinTree:
         self.number = None
 
     def set_number(self, data: list):
-        for i in data:
-            self.__set_recursion(i)
+        tuple(map(self.__set_recursion, data))
 
     def __set_recursion(self, data):
         if self.number is None:
@@ -39,10 +38,11 @@ class BinTree:
 
 def main():
     tree = BinTree()
-    tree.set_number([7, 3, 10, 5, 2, 9, 13, 12, 17, 1])
+    data = [7, 3, 10, 5, 2, 9, 13, 12, 17, 1]
+    tree.set_number(data)
 
-    print(tree.find_number(15))
-    print(tree.find_number(1))
+    print(tree.find_number(15))  # False
+    print(tree.find_number(1))  # True
 
 
 if __name__ == '__main__':
